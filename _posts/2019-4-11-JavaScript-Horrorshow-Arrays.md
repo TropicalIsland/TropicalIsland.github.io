@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "JavaScript Horrorshow: Arrays"
-author: Andrew McLean
 categories: JavaScript
 keywords: JavaScript, Array, Object, Grammar, Best Practice, Function, Method
 ---
@@ -35,7 +34,7 @@ watArray[5.434]="I'm definitely not an integer index"
 So like before, any number literal appears to be a suitable property key for an Object. As per the grammar, any String or Symbol type can be a key to an Object property. But Numbers aren't any of those!? Do not fear young one, since a key has to be one of those types, when you assign a new property to an Object, if the key is not already a String or Symbol, the runtime will call ToString on your key and store the transformed String value. [ToString](https://www.ecma-international.org/ecma-262/9.0/index.html#sec-tostring) is one of the many builtin type conversions done quite very opaquely by JavaScript, literally all the time, everywhere. As you can see if you look at the grammar, there are lots of types that have default conversions, including Numbers[^1]. This is exactly why you can do the madness above, it's completely legal and required by the grammar.
 
 ### The Apex of Array Weirdness
-Ok, that's still not too interesting. My Arrays in JavaScript can _do_ things, they have methods to do functional things like map, filter, reduce and normal things like push, pop, shift and unshift. These methods are inherited from the Array.prototype which defines all these. We could call these methods using the `myArray.method()` notation, i.e. a Member Expression, or we could be weird and slightly broken. Weird and slightly broken it is, i.e. `Array.prototype.method.call()`. This calls the method on a `this` and some arguments[^2]. Turns out Array.prototype's methods don't check the `this` value before doing all its magic. It has to coerce the `this`to an Object but that is a fundamentally satisfied aside from when `this` is `Null` or `Undefined`. When we use `Function.prototype.call`, `this` is set to the first argument. So this means we can do the following,
+Ok, that's still not too interesting. Arrays in JavaScript can _do_ things, they have methods to do functional things like map, filter, reduce and normal things like push, pop, shift and unshift. These methods are inherited from the Array.prototype which defines all these. We could call these methods using the `myArray.method()` notation, i.e. a Member Expression, or we could be weird and slightly broken. Weird and slightly broken it is, i.e. `Array.prototype.method.call()`. This calls the method on a `this` and some arguments[^2]. Turns out Array.prototype's methods don't check the `this` value before doing all its magic. It has to coerce the `this`to an Object but that is a fundamentally satisfied aside from when `this` is `Null` or `Undefined`. When we use `Function.prototype.call`, `this` is set to the first argument. So this means we can do the following,
 ```javascript
 waaat = {}
 Array.prototype.push.apply(waaat, 1)

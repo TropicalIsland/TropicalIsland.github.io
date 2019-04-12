@@ -250,9 +250,11 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-archives (~> 2.1)
   jekyll-feed (~> 0.6)
+  jekyll-paginate (~> 1.1)
+  jekyll-sitemap (~> 1.0)
   jekyll-whiteglass
-  tzinfo-data
 
 BUNDLED WITH
    2.0.1

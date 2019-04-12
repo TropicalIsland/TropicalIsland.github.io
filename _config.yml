@@ -9,6 +9,8 @@ lang: en-GB
 
 # Build settings
 markdown: kramdown
+kramdown:
+    footnote_backlink: "⤴"
 theme: jekyll-whiteglass
 plugins:
   - jekyll-archives
@@ -28,4 +30,4 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
 
-google_analytics: UA-138248321-1
+author: Andrew McLean
