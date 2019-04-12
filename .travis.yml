@@ -12,6 +12,7 @@ script:
 branches:
   only:
     - master
+    - gh-pages
 deploy:
   provider: pages
   skip-cleanup: true
