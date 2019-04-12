@@ -11,7 +11,7 @@ script:
   - bundle exec jekyll build
 branches:
   only:
-    - master
+    - gh-pages
 deploy:
   provider: pages
   skip-cleanup: true
