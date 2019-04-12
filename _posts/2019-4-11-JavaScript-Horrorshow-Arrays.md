@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "JavaScript Horrorshow: Arrays"
+author: Andrew McLean
 categories: JavaScript
 keywords: JavaScript, Array, Object, Grammar, Best Practice, Function, Method
 ---
