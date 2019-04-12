@@ -5,7 +5,7 @@
   
   <link href="/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" hreflang="en-GB" />
-  <updated>2019-04-12T21:22:03+00:00</updated>
+  <updated>2019-04-12T22:40:19+00:00</updated>
   <id>//</id>
 
   
@@ -16,6 +16,12 @@
     <subtitle>&quot;TODO: make a nice description&quot;</subtitle>
   
 
+  
+    <author>
+        <name>Andrew McLean</name>
+      
+      
+    </author>
   
 
   
@@ -56,7 +62,7 @@
 &lt;p&gt;So like before, any number literal appears to be a suitable property key for an Object. As per the grammar, any String or Symbol type can be a key to an Object property. But Numbers aren’t any of those!? Do not fear young one, since a key has to be one of those types, when you assign a new property to an Object, if the key is not already a String or Symbol, the runtime will call ToString on your key and store the transformed String value. &lt;a href=&quot;https://www.ecma-international.org/ecma-262/9.0/index.html#sec-tostring&quot;&gt;ToString&lt;/a&gt; is one of the many builtin type conversions done quite very opaquely by JavaScript, literally all the time, everywhere. As you can see if you look at the grammar, there are lots of types that have default conversions, including Numbers&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is exactly why you can do the madness above, it’s completely legal and required by the grammar.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-apex-of-array-weirdness&quot;&gt;The Apex of Array Weirdness&lt;/h3&gt;
-&lt;p&gt;Ok, that’s still not too interesting. My Arrays in JavaScript can &lt;em&gt;do&lt;/em&gt; things, they have methods to do functional things like map, filter, reduce and normal things like push, pop, shift and unshift. These methods are inherited from the Array.prototype which defines all these. We could call these methods using the &lt;code class=&quot;highlighter-rouge&quot;&gt;myArray.method()&lt;/code&gt; notation, i.e. a Member Expression, or we could be weird and slightly broken. Weird and slightly broken it is, i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;Array.prototype.method.call()&lt;/code&gt;. This calls the method on a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; and some arguments&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. Turns out Array.prototype’s methods don’t check the &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; value before doing all its magic. It has to coerce the &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;to an Object but that is a fundamentally satisfied aside from when &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;Null&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Undefined&lt;/code&gt;. When we use &lt;code class=&quot;highlighter-rouge&quot;&gt;Function.prototype.call&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; is set to the first argument. So this means we can do the following,&lt;/p&gt;
+&lt;p&gt;Ok, that’s still not too interesting. Arrays in JavaScript can &lt;em&gt;do&lt;/em&gt; things, they have methods to do functional things like map, filter, reduce and normal things like push, pop, shift and unshift. These methods are inherited from the Array.prototype which defines all these. We could call these methods using the &lt;code class=&quot;highlighter-rouge&quot;&gt;myArray.method()&lt;/code&gt; notation, i.e. a Member Expression, or we could be weird and slightly broken. Weird and slightly broken it is, i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;Array.prototype.method.call()&lt;/code&gt;. This calls the method on a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; and some arguments&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. Turns out Array.prototype’s methods don’t check the &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; value before doing all its magic. It has to coerce the &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;to an Object but that is a fundamentally satisfied aside from when &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;Null&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Undefined&lt;/code&gt;. When we use &lt;code class=&quot;highlighter-rouge&quot;&gt;Function.prototype.call&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; is set to the first argument. So this means we can do the following,&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;waaat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;waaat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -83,10 +89,10 @@
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;As you might have seen, that also includes Objects! To make a String from an Object requires calling the ToPrimitive conversion with a String hint. This delegates to the &lt;code class=&quot;highlighter-rouge&quot;&gt;toString&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;valueOf&lt;/code&gt; methods of your object if they exist and in that explicit order. So make sure to implement &lt;code class=&quot;highlighter-rouge&quot;&gt;toString&lt;/code&gt; methods for your objects and you can almost have a real map! &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;As you might have seen, that also includes Objects! To make a String from an Object requires calling the ToPrimitive conversion with a String hint. This delegates to the &lt;code class=&quot;highlighter-rouge&quot;&gt;toString&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;valueOf&lt;/code&gt; methods of your object if they exist and in that explicit order. So make sure to implement &lt;code class=&quot;highlighter-rouge&quot;&gt;toString&lt;/code&gt; methods for your objects and you can almost have a real map! &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;⤴&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;This also displays some funky JavaScript inheritance. Array’s prototype has methods, these are all hard coded and not rewritable. Since the methods also are Function Objects, they inherit the Function.prototype which gives the call method. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;myArray = [1,2,3]; myArray.map.call()&lt;/code&gt;, finds map in the Array.prototype property and then finds call in the prototype of that method, being the Function.prototype. What a wacky language. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;This also displays some funky JavaScript inheritance. Array’s prototype has methods, these are all hard coded and not rewritable. Since the methods also are Function Objects, they inherit the Function.prototype which gives the call method. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;myArray = [1,2,3]; myArray.map.call()&lt;/code&gt;, finds map in the Array.prototype property and then finds call in the prototype of that method, being the Function.prototype. What a wacky language. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;⤴&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</content>
@@ -97,6 +103,12 @@
       
       
 
+      
+        <author>
+            <name>Andrew McLean</name>
+          
+          
+        </author>
       
 
       
