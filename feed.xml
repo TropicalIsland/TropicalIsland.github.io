@@ -5,11 +5,11 @@
   
   <link href="/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" hreflang="en-GB" />
-  <updated>2019-04-14T15:34:55+00:00</updated>
+  <updated>2019-04-27T19:37:58+00:00</updated>
   <id>//</id>
 
   
-    <title type="html">Andrew McLean</title>
+    <title type="html">TropicalIsland</title>
   
 
   
@@ -24,6 +24,59 @@
     </author>
   
 
+  
+  
+    <entry>
+      
+      <title type="html">JavaScript Horrorshow: Function</title>
+      
+      
+      <link href="/2019/04/17/JavaScript-Horrowshow-Functions/" rel="alternate" type="text/html" title="JavaScript Horrorshow: Function" />
+      
+      <published>2019-04-17T00:00:00+00:00</published>
+      <updated>2019-04-17T00:00:00+00:00</updated>
+      <id>/2019/04/17/JavaScript-Horrowshow-Functions</id>
+      <content type="html" xml:base="/2019/04/17/JavaScript-Horrowshow-Functions/">&lt;h1 id=&quot;whats-in-a-function&quot;&gt;What’s in a Function?&lt;/h1&gt;
+&lt;p&gt;Ah functions, who doesn’t love a good function? In a general sense functions are just the movements that make the data models that represent our domain problems contort and dance towards a useful result. That is in an essence software development. But what are functions in JavaScript? Well their weird, let’s take a look at them.&lt;/p&gt;
+
+&lt;h1 id=&quot;not-objects-again&quot;&gt;Not objects again!&lt;/h1&gt;
+&lt;p&gt;Yep functions are objects. Like Arrays, functions are a type of exotic object that have unique interfaces over common objects. But just like Arrays, you can do the classic weird things to them like so&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFun&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myFun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;weird&quot;&quot;
+myFun[0] = &quot;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;again&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;So evil aside, these things are very not useful and should typically be avoided. There are some arguments that creating function objects can be useful, but I don’t want to get too into why that may or may not be useful&lt;/p&gt;
+
+&lt;p&gt;TODO: Finish this I guess&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+        <author>
+            <name>Andrew McLean</name>
+          
+          
+        </author>
+      
+
+      
+        <category term="JavaScript" />
+      
+
+      
+
+      
+        <summary type="html">What’s in a Function? Ah functions, who doesn’t love a good function? In a general sense functions are just the movements that make the data models that represent our domain problems contort and dance towards a useful result. That is in an essence software development. But what are functions in JavaScript? Well their weird, let’s take a look at them.</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>
