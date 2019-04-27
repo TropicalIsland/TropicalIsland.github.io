@@ -7,7 +7,7 @@ body { font: 400 16px/1.5 Bitter, "Apple SD Gothic Neo", AppleGothic, NanumBarun
 table { width: 100%; margin: 0 0 20px 0; text-align: left; }
 
 /** Set `margin-bottom` to maintain vertical rhythm */
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 10px; }
 
 /** Images */
 img { max-width: 100%; vertical-align: middle; }
@@ -18,7 +18,7 @@ figure > img { display: block; }
 figcaption { font-size: 14px; }
 
 /** Lists */
-ul, ol { margin-left: 30px; }
+ul, ol { margin-left: 20px; }
 
 li > ul, li > ol { margin-bottom: 0; }
 
@@ -32,11 +32,11 @@ a:visited { color: #1d508f; }
 a:hover { color: #111; text-decoration: underline; }
 
 /** Blockquotes */
-blockquote { color: #828282; border-left: 4px solid #e8e8e8; padding-left: 15px; font-size: 18px; letter-spacing: -1px; font-style: italic; }
+blockquote { color: #828282; border-left: 4px solid #e8e8e8; padding-left: 10px; font-size: 18px; letter-spacing: -1px; font-style: italic; }
 blockquote > :last-child { margin-bottom: 0; }
 
 /** Rules */
-hr { height: 4px; margin: 15px 0; border: 0; background-color: #e8e8e8; }
+hr { height: 4px; margin: 10px 0; border: 0; background-color: #e8e8e8; }
 
 /** Code formatting */
 pre, code { font-family: Monaco, Menlo, Consolas, "Courier New", DotumChe, monospace; font-size: 13px; border: 1px solid #e8e8e8; border-radius: 0; background-color: whitesmoke; }
@@ -47,8 +47,8 @@ pre { padding: 8px 12px; overflow-x: auto; word-wrap: normal; }
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 /** Wrapper */
-.wrapper { max-width: -webkit-calc(800px - (30px * 2)); max-width: calc(800px - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
-@media screen and (max-width: 800px) { .wrapper { max-width: -webkit-calc(800px - (30px)); max-width: calc(800px - (30px)); padding-right: 15px; padding-left: 15px; } }
+.wrapper { max-width: -webkit-calc(1000px - (20px * 2)); max-width: calc(1000px - (20px * 2)); margin-right: auto; margin-left: auto; padding-right: 20px; padding-left: 20px; }
+@media screen and (max-width: 800px) { .wrapper { max-width: -webkit-calc(1000px - (20px)); max-width: calc(1000px - (20px)); padding-right: 10px; padding-left: 10px; } }
 
 /** Clearfix */
 .wrapper:after, .pagination:after { content: ""; display: table; clear: both; }
@@ -66,21 +66,21 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
   .site-nav .page-link:not(:last-child) { margin-right: 0; } }
 
 /** Site footer */
-.site-footer { padding: 30px 0; font-size: 15px; color: #828282; text-align: center; }
+.site-footer { padding: 20px 0; font-size: 15px; color: #828282; text-align: center; }
 
 /** Page content */
-.page-content { padding: 30px 0; }
+.page-content { padding: 20px 0; }
 
 .page-heading { font-size: 20px; }
 
 .post-list { margin-left: 0; list-style: none; }
 .post-list .post-link:hover { text-decoration: none; }
-.post-list > li { margin-bottom: 60px; }
-.post-list > li:not(:first-child) { border-top: 4px solid #e8e8e8; padding-top: 60px; }
+.post-list > li { margin-bottom: 40px; }
+.post-list > li:not(:first-child) { border-top: 4px solid #e8e8e8; padding-top: 40px; }
 
 .post-archives { margin-left: 0; list-style: none; }
 .post-archives .post-link { font-size: 24px; }
-.post-archives > li { margin-bottom: 30px; }
+.post-archives > li { margin-bottom: 20px; }
 
 .post-meta { font-size: 14px; color: #828282; }
 
@@ -92,12 +92,12 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .post-continue a:hover { color: white; background-color: #2568ba; }
 
 /** Posts */
-.post-header { margin-bottom: 30px; }
+.post-header { margin-bottom: 20px; }
 
 .post-title { font-size: 42px; letter-spacing: -1px; line-height: 1; }
 @media screen and (max-width: 800px) { .post-title { font-size: 36px; } }
 
-.post-content { margin-bottom: 30px; }
+.post-content { margin-bottom: 20px; }
 .post-content h1 { font-size: 38px; }
 @media screen and (max-width: 800px) { .post-content h1 { font-size: 34px; } }
 .post-content h2 { font-size: 32px; }
@@ -108,7 +108,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 @media screen and (max-width: 800px) { .post-content h4 { font-size: 18px; } }
 
 /** Pagination */
-.pagination { padding: 15px 0; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; text-align: center; }
+.pagination { padding: 10px 0; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; text-align: center; }
 .pagination a, .pagination a:visited { color: #828282; }
 .pagination a:hover { color: #2568ba; }
 .pagination .previous { float: left; }
