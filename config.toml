@@ -1,0 +1,13 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "TropicalIsland"
+theme = "kiera"
+
+[author]
+author = "Andrew McLean"
+github = "TropicalIsland"
+gitlab = "AndyMcL"
+linkedin = "andrew-mclean-8a2741149"
+
+[params]
+    tagline = "Here be ramblings on JavaScript, C++ and all sorts"

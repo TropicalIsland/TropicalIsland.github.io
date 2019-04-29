@@ -1,8 +1,8 @@
 ---
-layout: post
 title: "JavaScript Horrorshow: Arrays"
-categories: JavaScript
-keywords: JavaScript, Array, Object, Grammar, Best Practice, Function, Method
+date: 2019-04-11T18:00:00+01:00
+tags: ["JavaScript", "Functions", "Object", "Array"]
+categories: ["JavaScript"]
 ---
 
 ## An Education

@@ -1,8 +1,8 @@
 ---
-layout: post
 title: "JavaScript Horrorshow: Function"
-categories: JavaScript
-keywords: JavaScript, Object, Grammar, Best Practice, Function, Method
+date: 2019-04-17T18:00:00+01:00
+tags: ["JavaScript", "Function", "Object"]
+categories: ["JavaScript"]
 ---
 
 # What's in a Function?
