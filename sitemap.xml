@@ -3,40 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://tropicalisland.github.io/posts/</loc>
+    <loc>https://tropicalisland.github.io/posts/</loc>
     <lastmod>2019-04-11T18:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tropicalisland.github.io/about/</loc>
+    <loc>https://tropicalisland.github.io/about/</loc>
     <lastmod>2019-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tropicalisland.github.io/</loc>
+    <loc>https://tropicalisland.github.io/</loc>
     <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tropicalisland.github.io/categories/</loc>
+    <loc>https://tropicalisland.github.io/categories/</loc>
     <lastmod>2019-04-11T18:00:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tropicalisland.github.io/categories/javascript/</loc>
+    <loc>https://tropicalisland.github.io/categories/javascript/</loc>
     <lastmod>2019-04-11T18:00:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tropicalisland.github.io/posts/2019-04-11-javascript-horrorshow-arrays/</loc>
+    <loc>https://tropicalisland.github.io/posts/2019-04-11-javascript-horrorshow-arrays/</loc>
     <lastmod>2019-04-11T18:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tropicalisland.github.io/tags/</loc>
+    <loc>https://tropicalisland.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on TropicalIsland</title>
-    <link>http://tropicalisland.github.io/posts/</link>
+    <link>https://tropicalisland.github.io/posts/</link>
     <description>Recent content in Posts on TropicalIsland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2019 - Andrew McLean | Icon made by [Freepik](https://www.freepik.com/) from [www.flaticon.com](www.flaticon.com) is licensed by [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)</copyright>
     <lastBuildDate>Thu, 11 Apr 2019 18:00:00 +0100</lastBuildDate>
     
-	<atom:link href="http://tropicalisland.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tropicalisland.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JavaScript Horrorshow: Arrays</title>
-      <link>http://tropicalisland.github.io/posts/2019-04-11-javascript-horrorshow-arrays/</link>
+      <link>https://tropicalisland.github.io/posts/2019-04-11-javascript-horrorshow-arrays/</link>
       <pubDate>Thu, 11 Apr 2019 18:00:00 +0100</pubDate>
       
-      <guid>http://tropicalisland.github.io/posts/2019-04-11-javascript-horrorshow-arrays/</guid>
+      <guid>https://tropicalisland.github.io/posts/2019-04-11-javascript-horrorshow-arrays/</guid>
       <description>An Education: JavaScript is a weird language. Since I apparently now write it professionally, I&amp;rsquo;ve spent the last little while trying to tease out its grisly secrets and understand them.</description>
     </item>
     
