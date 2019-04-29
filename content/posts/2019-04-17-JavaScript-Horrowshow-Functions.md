@@ -1,8 +1,8 @@
 ---
 title: "JavaScript Horrorshow: Function"
 date: 2019-04-17T18:00:00+01:00
-tags: ["JavaScript", "Function", "Object"]
 categories: ["JavaScript"]
+draft: true
 ---
 
 # What's in a Function?

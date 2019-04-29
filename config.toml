@@ -1,7 +1,15 @@
-baseURL = "http://example.org/"
+baseURL = "http://tropicalisland.github.io/"
 languageCode = "en-us"
 title = "TropicalIsland"
+copyright = "Copyright 7copy; 2019 - Andrew McLean"
+canonifyurls = true
 theme = "kiera"
+
+paginate = 3
+
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
 
 [author]
 author = "Andrew McLean"

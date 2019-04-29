@@ -1,12 +1,11 @@
 ---
 title: "JavaScript Horrorshow: Arrays"
 date: 2019-04-11T18:00:00+01:00
-tags: ["JavaScript", "Functions", "Object", "Array"]
 categories: ["JavaScript"]
 ---
 
-## An Education
-JavaScript is a weird language. Since apparently I now write it professionally, I've spent the last little while trying to tease out its grisly secrets and understand them. Because by design, it is fundamentally different to almost all popular languages, it might be valuable to explore these "pleasant surprises" and try to reason about some of the insanity that is JavaScript. With that in mind, I figured that a small series of short posts on some of the most "how much can I break the JavaScript?", "Why on earth does the grammar permit this?" moments and have a bit of a collective point and laugh as well as promising never to do any of these naughty things. With this all said and done please enjoy our first installment on Arrays.
+## An Education:
+JavaScript is a weird language. Since I apparently now write it professionally, I've spent the last little while trying to tease out its grisly secrets and understand them. Because by design, it is fundamentally different to almost all popular languages, it might be valuable to explore these "pleasant surprises" and try to reason about some of the insanity that is JavaScript. With that in mind, I figured that a small series of short posts on some of the most "how much can I break the JavaScript?", "Why on earth does the grammar permit this?" moments and have a bit of a collective point and laugh as well as promising never to do any of these naughty things. With this all said and done please enjoy our first installment on Arrays.
 
 ## Arrays
 What is an Array? If you've come from the land of stack pointers and registers, you'd tell me "it's typically a one-dimensional data structure that contains some fixed-size collection of elements in sequential order". I've fallen asleep. If you've come from the land of applicative functors and monoids then you'd tell me "well it's just sort of a function whose domain is isomorphic to contiguous subsets of the integers". Now my brain has exploded. Lastly, we have JavaScript, tell me JavaScript what is an array? It's an Object.
@@ -37,23 +36,23 @@ So like before, any number literal appears to be a suitable property key for an 
 Ok, that's still not too interesting. Arrays in JavaScript can _do_ things, they have methods to do functional things like map, filter, reduce and normal things like push, pop, shift and unshift. These methods are inherited from the Array.prototype which defines all these. We could call these methods using the `myArray.method()` notation, i.e. a Member Expression, or we could be weird and slightly broken. Weird and slightly broken it is, i.e. `Array.prototype.method.call()`. This calls the method on a `this` and some arguments[^2]. Turns out Array.prototype's methods don't check the `this` value before doing all its magic. It has to coerce the `this`to an Object but that is a fundamentally satisfied aside from when `this` is `Null` or `Undefined`. When we use `Function.prototype.call`, `this` is set to the first argument. So this means we can do the following,
 ```javascript
 waaat = {}
-Array.prototype.push.apply(waaat, 1)
+Array.prototype.push.call(waaat, 1)
 ```
 Go on, try it! You'll see that `waaat` is now `{0:1, length:1}`. Ok, so this is super weird. SUPER WEIRD, love it. You can keep playing calling your Array.prototype methods on your ~~Object~~ array, sorry. If you keep `push`ing on your array, the length will continue to increment and behave all array-like. Now try reassigning length to a lower value,
 ```javascript
 arr = {}
-Array.prototype.push.apply(arr, 1)
-Array.prototype.push.apply(arr, 2)
+Array.prototype.push.call(arr, 1)
+Array.prototype.push.call(arr, 2)
 arr.length = 1
-Array.prototype.push.apply(arr, "WAT")
+Array.prototype.push.call(arr, "WAT")
 ```
 Yep, it'll just write into where it thinks there is space. What, you didn't think calling builtin Array methods on a not Array could go wrong? Well it will. This is a very, very silly idea. Next, try making length too long,
 ```javascript
 arr = {}
-Array.prototype.push.apply(arr, 1)
-Array.prototype.push.apply(arr, 2)
+Array.prototype.push.call(arr, 1)
+Array.prototype.push.call(arr, 2)
 arr.length = 4
-Array.prototype.push.apply(arr, "WAT")
+Array.prototype.push.call(arr, "WAT")
 ```
 Ooo! It doesn't pad the array like actual Arrays. How convenient. The length is totally wrong now though, oh well. 
 
