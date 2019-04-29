@@ -19,3 +19,4 @@ linkedin = "andrew-mclean-8a2741149"
 
 [params]
     tagline = "Here be ramblings on JavaScript, C++ and all sorts"
+    customCSS = ["css/styles.css"]
