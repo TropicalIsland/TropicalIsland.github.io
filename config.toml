@@ -1,4 +1,4 @@
-baseURL = "http://tropicalisland.github.io/"
+baseURL = "https://tropicalisland.github.io/"
 languageCode = "en-us"
 title = "TropicalIsland"
 copyright = "Copyright &copy; 2019 - Andrew McLean | Icon made by [Freepik](https://www.freepik.com/) from [www.flaticon.com](www.flaticon.com) is licensed by [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)"
