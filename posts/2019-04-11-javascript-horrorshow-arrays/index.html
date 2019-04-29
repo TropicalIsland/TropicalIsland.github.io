@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>TropicalIsland</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="" />
+  <meta name="generator" content="Hugo 0.55.4" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="http://tropicalisland.github.io/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="http://tropicalisland.github.io/">TropicalIsland</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/andrew-mclean-8a2741149"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/TropicalIsland"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://gitlab.com/AndyMcL"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+      </ul>
+      
+      <p><em>Here be ramblings on JavaScript, C++ and all sorts</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="http://tropicalisland.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://tropicalisland.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>JavaScript Horrorshow: Arrays</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2019-04-11T18:00:00&#43;01:00">Apr 11, 2019</time>
+        </li>
+        
+        
+        <li>
+            Categories: 
+            <em>
+                
+                    
+                    <a href="http://tropicalisland.github.io/categories/javascript/">JavaScript</a>
+                
+            </em>
+        </li>
+        
+
+        
+
+        <li>6 min read</li>
+    </ul>
+</aside>
+    
+
+    
+
+<h2 id="an-education">An Education:</h2>
+
+<p>JavaScript is a weird language. Since I apparently now write it professionally, I&rsquo;ve spent the last little while trying to tease out its grisly secrets and understand them. Because by design, it is fundamentally different to almost all popular languages, it might be valuable to explore these &ldquo;pleasant surprises&rdquo; and try to reason about some of the insanity that is JavaScript. With that in mind, I figured that a small series of short posts on some of the most &ldquo;how much can I break the JavaScript?&rdquo;, &ldquo;Why on earth does the grammar permit this?&rdquo; moments and have a bit of a collective point and laugh as well as promising never to do any of these naughty things. With this all said and done please enjoy our first installment on Arrays.</p>
+
+<h2 id="arrays">Arrays</h2>
+
+<p>What is an Array? If you&rsquo;ve come from the land of stack pointers and registers, you&rsquo;d tell me &ldquo;it&rsquo;s typically a one-dimensional data structure that contains some fixed-size collection of elements in sequential order&rdquo;. I&rsquo;ve fallen asleep. If you&rsquo;ve come from the land of applicative functors and monoids then you&rsquo;d tell me &ldquo;well it&rsquo;s just sort of a function whose domain is isomorphic to contiguous subsets of the integers&rdquo;. Now my brain has exploded. Lastly, we have JavaScript, tell me JavaScript what is an array? It&rsquo;s an Object.</p>
+
+<h3 id="a-what">A What?</h3>
+
+<p>Yes, that&rsquo;s right. &ldquo;An Object&rdquo;. As with all non-fundamental types &ndash; things that are not numbers, strings, etc. &ndash; at the heart of it, Arrays are just Objects. This means you can do all the things you could do to an Object, to an Array. For example, my Array is sad that it doesn&rsquo;t have a name?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">sadArray</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
+<span style="color:#a6e22e">sadArray</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dave&#34;</span>
+</code></pre></div>
+<p>Well bam, now Dave has a name. You really can do all sorts of crazy things with Objects and almost all of them apply to Arrays too. But that&rsquo;s pretty boring. I&rsquo;m sure you&rsquo;ve seen plenty of weird things like this before, whether it was memoizing a recursive function by giving it a property which holds a results cache or you&rsquo;ve already personally been naming Arrays like it&rsquo;s your life mission. That&rsquo;s not what we come to see. That&rsquo;s not <em>JavaScript</em> enough.</p>
+
+<h3 id="a-what-1">A WHAT?</h3>
+
+<p>So if an Array is an Object, can an Object be an Array? Why yes of course, why not?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">myArray</span> <span style="color:#f92672">=</span> {}
+<span style="color:#a6e22e">myArray</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YAY&#34;</span>
+</code></pre></div>
+<p>Ok, let&rsquo;s not get too excited, it&rsquo;s just using an integer key to map to a value. We have to use the square bracket notation as <code>myArray.1</code> is not valid in the grammar since 1 is an Integer literal and not a valid identifier. Meh boring, let&rsquo;s get weirder!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">watArray</span> <span style="color:#f92672">=</span> {}
+<span style="color:#a6e22e">watArray</span>[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I&#39;m on the wrong side of the real line&#34;</span>
+<span style="color:#a6e22e">watArray</span>[<span style="color:#ae81ff">5.434</span>]<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I&#39;m definitely not an integer index&#34;</span>
+</code></pre></div>
+<p>So like before, any number literal appears to be a suitable property key for an Object. As per the grammar, any String or Symbol type can be a key to an Object property. But Numbers aren&rsquo;t any of those!? Do not fear young one, since a key has to be one of those types, when you assign a new property to an Object, if the key is not already a String or Symbol, the runtime will call ToString on your key and store the transformed String value. <a href="https://www.ecma-international.org/ecma-262/9.0/index.html#sec-tostring">ToString</a> is one of the many builtin type conversions done quite very opaquely by JavaScript, literally all the time, everywhere. As you can see if you look at the grammar, there are lots of types that have default conversions, including Numbers<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>. This is exactly why you can do the madness above, it&rsquo;s completely legal and required by the grammar.</p>
+
+<h3 id="the-apex-of-array-weirdness">The Apex of Array Weirdness</h3>
+
+<p>Ok, that&rsquo;s still not too interesting. Arrays in JavaScript can <em>do</em> things, they have methods to do functional things like map, filter, reduce and normal things like push, pop, shift and unshift. These methods are inherited from the Array.prototype which defines all these. We could call these methods using the <code>myArray.method()</code> notation, i.e. a Member Expression, or we could be weird and slightly broken. Weird and slightly broken it is, i.e. <code>Array.prototype.method.call()</code>. This calls the method on a <code>this</code> and some arguments<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>. Turns out Array.prototype&rsquo;s methods don&rsquo;t check the <code>this</code> value before doing all its magic. It has to coerce the <code>this</code>to an Object but that is a fundamentally satisfied aside from when <code>this</code> is <code>Null</code> or <code>Undefined</code>. When we use <code>Function.prototype.call</code>, <code>this</code> is set to the first argument. So this means we can do the following,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">waaat</span> <span style="color:#f92672">=</span> {}
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">push</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">waaat</span>, <span style="color:#ae81ff">1</span>)
+</code></pre></div>
+<p>Go on, try it! You&rsquo;ll see that <code>waaat</code> is now <code>{0:1, length:1}</code>. Ok, so this is super weird. SUPER WEIRD, love it. You can keep playing calling your Array.prototype methods on your <del>Object</del> array, sorry. If you keep <code>push</code>ing on your array, the length will continue to increment and behave all array-like. Now try reassigning length to a lower value,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> {}
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">push</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arr</span>, <span style="color:#ae81ff">1</span>)
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">push</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arr</span>, <span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">push</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arr</span>, <span style="color:#e6db74">&#34;WAT&#34;</span>)
+</code></pre></div>
+<p>Yep, it&rsquo;ll just write into where it thinks there is space. What, you didn&rsquo;t think calling builtin Array methods on a not Array could go wrong? Well it will. This is a very, very silly idea. Next, try making length too long,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> {}
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">push</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arr</span>, <span style="color:#ae81ff">1</span>)
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">push</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arr</span>, <span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">push</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">arr</span>, <span style="color:#e6db74">&#34;WAT&#34;</span>)
+</code></pre></div>
+<p>Ooo! It doesn&rsquo;t pad the array like actual Arrays. How convenient. The length is totally wrong now though, oh well.</p>
+
+<p>Wow, at this point I think we&rsquo;ve had enough weirdness to make even a JavaScript maestro sweat a little. That should probably do for today.</p>
+
+<p>Despite all this dreadfulness, Arrays are very useful in JavaScript, allowing you to implement a more declarative style using methods like map and also add collection semantics to your code &ndash; i.e. I can have and do stuff to a list of things, not just one thing &ndash; both of these features facilitating the authoring of expressive, useful code. Everything we have seen today is an absolute defamation of these lovely things. Please, if you ever find yourself writing anything at all like that seen above, you are doing it wrong. Let the emotions of this whirlwind tour through JavaScript weird settle into a resolve never to do things as silly as this anywhere near production and be thankful that Arrays are considered Exotic Objects that do exotic things and we get all of this magic functionality in complete correctness for free. That is to say, don&rsquo;t forget to be nice to your Arrays. They&rsquo;re fantastic Objects!</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">As you might have seen, that also includes Objects! To make a String from an Object requires calling the ToPrimitive conversion with a String hint. This delegates to the <code>toString</code> and <code>valueOf</code> methods of your object if they exist and in that explicit order. So make sure to implement <code>toString</code> methods for your objects and you can almost have a real map!
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">This also displays some funky JavaScript inheritance. Array&rsquo;s prototype has methods, these are all hard coded and not rewritable. Since the methods also are Function Objects, they inherit the Function.prototype which gives the call method. For example, <code>myArray = [1,2,3]; myArray.map.call()</code>, finds map in the Array.prototype property and then finds call in the prototype of that method, being the Function.prototype. What a wacky language.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2019 - Andrew McLean | Icon made by <a href="https://www.freepik.com/">Freepik</a> from <a href="www.flaticon.com">www.flaticon.com</a> is licensed by <a href="https://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="http://tropicalisland.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="http://tropicalisland.github.io/js/scripts.js"></script>
+</body>
+
+</html>

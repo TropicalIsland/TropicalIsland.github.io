@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on TropicalIsland</title>
+    <link>http://tropicalisland.github.io/categories/</link>
+    <description>Recent content in Categories on TropicalIsland</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2019 - Andrew McLean | Icon made by [Freepik](https://www.freepik.com/) from [www.flaticon.com](www.flaticon.com) is licensed by [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)</copyright>
+    <lastBuildDate>Thu, 11 Apr 2019 18:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://tropicalisland.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript</title>
+      <link>http://tropicalisland.github.io/categories/javascript/</link>
+      <pubDate>Thu, 11 Apr 2019 18:00:00 +0100</pubDate>
+      
+      <guid>http://tropicalisland.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
